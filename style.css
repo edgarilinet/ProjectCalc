@@ -1,0 +1,33 @@
+body{
+    font-size: 2em;
+}
+
+button{
+    padding: 1em;
+    border-radius: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.chisla{
+    border: 2px solid #000;
+    width: 25vh;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.numPad{
+    width: 25vh;
+}
+
+#history{
+    height: 1em;
+    opacity: 0.3;
+    text-align: right;
+}
+
+#disp{
+    height: 1em;
+}
