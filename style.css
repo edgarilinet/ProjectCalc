@@ -10,15 +10,19 @@ body{
   bottom: 0;
   right: 0;
   overflow: auto;
+  background-color: #1e412f;
 }
 
 .all{
-    min-height: 100%;
-    width: 30vh;
+    min-height: 10em;
+    max-width: 8em;
     display: inline-block;
     margin-top: 25vh;
     vertical-align: middle;
     text-align: center;
+    border: 20px solid #fff;
+    border-radius: 10px;
+    background-color: #3367B5;
 }
 
 button{
@@ -27,19 +31,29 @@ button{
     height: 4.5em;
     width: 4.5em;
     text-align: center;
+    background-color: #3367B5;
+
 }
 
 .chisla{
-    border: 2px solid #000;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 2px solid #000;
     width: 100%;
     border-radius: 20px;
     text-align: center;
-    padding: 10px;
     display: inline-block;
+    height: 0 auto;
+    background-color: #3367B5;
+}
+
+.subchisla{
+    padding: 10px;
 }
 
 .numPad{
-    width: 25em;
+    
 }
 
 #history{
