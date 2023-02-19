@@ -3,7 +3,7 @@ let tempNum = '';
 let display = document.getElementById('disp');
 let history = document.getElementById('history');
 display.textContent = "";
-history.textContent = "";
+history.textContent = "Введите пример";
 
 function histClick(){
     let str = history.textContent;
@@ -18,6 +18,7 @@ function number (sim){
 
 function allClean(){
     display.textContent = "";
+    document.getElementById("disp-itog").textContent = "";
     i = 0;
     tempNum = "";
     arLen.allClean;
@@ -66,9 +67,9 @@ function oper(operator){
         //let sum = itog(array, operAr);
 
         console.log(eval(tempNum));
-        display.textContent = display.textContent + "=" + eval(tempNum);
-        history.textContent = '\n' + display.textContent + '\n';
-        allClean();
+        document.getElementById("disp-itog") .textContent = eval(tempNum);
+        history.textContent = '\n' + display.textContent + '=' + eval(tempNum) + '\n';
+        
     }
     
 }

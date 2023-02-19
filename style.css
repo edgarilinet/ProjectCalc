@@ -1,28 +1,42 @@
 body{
-    width: 100%;
-    height: 100%;
     font-size: 2em;
     text-align: center;
     vertical-align: middle;
     position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow: auto;
-  background-color: #1e412f;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background-color: rgb(254,160,160);
+    background-color: linear-gradient(151deg, rgba(254,160,160,1) 0%, rgba(255,123,123,1) 54%);
 }
 
 .all{
-    min-height: 10em;
-    max-width: 8em;
-    display: inline-block;
-    margin-top: 25vh;
-    vertical-align: middle;
-    text-align: center;
-    border: 20px solid #fff;
-    border-radius: 10px;
+    position: relative;
+    display:flexbox;
+    margin: 5px;
+    width: 8.5em;
+    border-radius: 1em;
     background-color: #3367B5;
+    z-index: 3;
+}
+.grr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.foo{
+    position: absolute;
+    height: 15.5em;
+    width: 10em;
+    background-color: #fff;
+    opacity: 30%;
+    z-index: 1;
+    border-radius: 1em;
 }
 
 button{
@@ -53,7 +67,7 @@ button{
 }
 
 .numPad{
-    
+    padding-left: 0.2em;
 }
 
 #history{
@@ -62,6 +76,12 @@ button{
     text-align: right;
 }
 
-#disp{
+.disp{
     height: 1em;
+    text-align: right;
+}
+
+.down-disp{
+    height: 1em;
+    font-size: 1.5em;
 }
