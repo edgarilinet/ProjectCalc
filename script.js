@@ -47,31 +47,22 @@ let arLen = new Array();
 let operAr = new Array();
 let i = 0;
 function oper(operator){
-    if (tempNum.slice(tempNum.length - 1, tempNum.length) == '+ ') {
+    if (tempNum.slice(tempNum.length - 1) == '+ ') {
         alert( "уже введен плюс");
 
     }
     if (operator != '='){
         array[i] = tempNum.slice(arLen[i-1]+1, tempNum.length);
         operAr[i] = operator;
-        console.log("i = " + i)
-        console.log(array[i])
-        console.log(operAr[i])
         arLen[i] = tempNum.length;
-        console.log(arLen[i])
         i++;
         display.textContent = tempNum = tempNum + operator;
 
     } else if (operator == "="){
         array[i] = tempNum.slice(arLen[i-1]+1, tempNum.length);
-        //let sum = itog(array, operAr);
-
-        console.log(eval(tempNum));
         document.getElementById("disp-itog") .textContent = eval(tempNum);
         history.textContent = '\n' + display.textContent + '=' + eval(tempNum) + '\n';
-        
     }
-    
 }
 
 function itog (arrChislo, arrOper){
