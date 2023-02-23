@@ -1,0 +1,39 @@
+{
+  "name": "projectcalc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "npm run build && npm run static-server",
+    "static-server": "static-server ./build",
+    "develop": "cross-env NODE_ENV=development webpack serve --config ./webpack/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.prod.js",
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --quiet --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgarilinet/ProjectCalc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edgarilinet/ProjectCalc/issues"
+  },
+  "homepage": "https://github.com/edgarilinet/ProjectCalc#homepage",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

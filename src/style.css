@@ -1,0 +1,121 @@
+body{
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background-color: rgb(254,160,160);
+    background-color: linear-gradient(151deg, rgba(254,160,160,1) 0%, rgba(255,123,123,1) 54%);
+}
+
+html{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.grr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.backPlant{
+    position: absolute;
+    height: 17em;
+    max-height: 16.6em;
+    width: 10em;
+    max-width: 10em;
+    background-color: #fff;
+    opacity: 18%;
+    z-index: 1;
+    border-radius: 1em;
+}
+
+.all{
+    position: relative;
+    display:flexbox;
+    margin: 5px;
+    border-radius: 1em;
+    background-color: #3367B5;
+    z-index: 3;
+    box-shadow: 0px 0px 1000px 14px rgba(0,0,0,0.35);
+}
+
+button{
+    padding: 0em;
+    font-size: 1em;
+    border-color: #3367B5;
+    border-style: none;
+    border-radius: 20px;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+    background-color: #3367B5;
+    color: #fff;
+}
+
+button:hover{
+    background-color: #739ad3;
+    border-radius: 2em;
+}
+
+button:active{
+    position: relative;
+    top: 2px;
+    left: 2px;
+    padding: 0em;
+    font-size: 1em;
+    border-color: #3367B5;
+    border-style: none;
+    border-radius: 2em;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+    background-color: #739ad3;
+}
+
+.chisla{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 2px solid rgb(241, 187, 187);
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    height: 0 auto;
+    background-color: #3367B5;
+    color: #fff;
+}
+
+.subchisla{
+    padding: 10px;
+}
+
+.numPad{
+    padding-left: 0.2em;
+}
+
+#history{
+    height: 1em;
+    opacity: 0.3;
+    text-align: right;
+    padding-top: 0.2em;
+}
+
+.disp{
+    height: 1em;
+    text-align: right;
+    padding-top: 0.2em;
+}
+
+.down-disp{
+    height: 1em;
+    font-size: 1.5em;
+}
