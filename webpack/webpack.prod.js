@@ -1,29 +1,57 @@
-const path = require('path');
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
-const TerserPlugin = require('terser-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const path = require("path");
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = merge(common, {
-  mode: 'production',
-  devtool: 'source-map',
+module.exports = {
+  entry: path.join(__dirname, "../src/script.js"),
   output: {
-    publicPath: '/',
-    path: path.resolve(__dirname, '../public')
+    publicPath: "/",
+    filename: "[name].bundle.js",
+    path: path.join(__dirname, "../public"),
+    chunkFilename: "[name]-[id].js",
   },
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        parallel: true,
-        terserOptions: {
-        },
-      }),
-    ]
+  target: "web",
+  resolve: {
+    extensions: [".ts", ".tsx", ".scss", ".js", ".jsx"],
+  },
+  module: {
+    rules: [
+      { test: /\.tsx?$/, loader: "ts-loader", exclude: /node_modules/ },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(c|s[ac])ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "resolve-url-loader",
+          // {
+          //   loader: 'css-loader',
+          //   options: {
+          //     modules: {
+          //       localIdentName: '[hash:base64:5]--[local]'
+          //     }
+          //   }
+          // },
+          "sass-loader",
+        ],
+      },
+    ],
   },
   plugins: [
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-      analyzerMode: 'static'
-    })
-  ]
-});
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "../src/homepage.html"),
+      title: "test-task",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }),
+  ],
+};
