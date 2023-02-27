@@ -15,42 +15,23 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".scss", ".js", ".jsx"],
   },
-  module: {
-    rules: [
-      { test: /\.tsx?$/, loader: "ts-loader", exclude: /node_modules/ },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(c|s[ac])ss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          "resolve-url-loader",
-          // {
-          //   loader: 'css-loader',
-          //   options: {
-          //     modules: {
-          //       localIdentName: '[hash:base64:5]--[local]'
-          //     }
-          //   }
-          // },
-        ],
-      },
-    ],
-  },
   plugins: [
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "../src/homepage.html"),
+      template: './src/homepage.html',
       title: "test-task",
     }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
-    }),
+    new MiniCssExtractPlugin(),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+    ],
+  },
+  
 };
