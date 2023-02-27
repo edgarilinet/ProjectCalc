@@ -1,4 +1,4 @@
-
+import "./style.css";
 let tempNum = '';
 let display = document.getElementById('disp');
 let history = document.getElementById('history');

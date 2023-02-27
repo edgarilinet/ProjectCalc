@@ -1,0 +1,1 @@
+(()=>{"use strict";let t=document.getElementById("disp"),e=document.getElementById("history");document.getElementById("disp-itog"),t.textContent="",e.textContent="Введите пример",new Array,new Array,new Array})();
